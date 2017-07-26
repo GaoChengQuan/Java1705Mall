@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,10 +17,22 @@ public class ProductController {
 	
 	@Autowired
 	IProductService productService;
+	
+	@RequestMapping("/index")
+	public String index() {
+		return "index";
+	}
 
-	@RequestMapping("/findAll")
+	/*@RequestMapping("/findAll")
 	@ResponseBody
 	public List<Product> findAll() {
 		return productService.findAll();
+	}*/
+	
+	@RequestMapping("/findAll")
+	public String findAll(Model model) {
+		List<Product> list = productService.findAll();
+		model.addAttribute("list", list);
+		return "product";
 	}
 }

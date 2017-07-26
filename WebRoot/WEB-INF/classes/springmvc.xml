@@ -16,7 +16,9 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     
     <!-- 静态资源解析:包括js、css、img -->
     <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
     <mvc:resources location="/img/" mapping="/img/**"/>
+    <mvc:resources location="/fonts/" mapping="/fonts/**"/>
     <mvc:resources location="/lib/" mapping="/lib/**"/>
     
     <!-- 配置注解驱动 -->
