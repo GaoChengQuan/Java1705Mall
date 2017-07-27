@@ -18,21 +18,16 @@ public class ProductController {
 	@Autowired
 	IProductService productService;
 	
-	@RequestMapping("/index")
-	public String index() {
-		return "index";
-	}
-
-	/*@RequestMapping("/findAll")
+	@RequestMapping("/listJson")
 	@ResponseBody
-	public List<Product> findAll() {
+	public List<Product> listJson() {
 		return productService.findAll();
-	}*/
+	}
 	
 	@RequestMapping("/findAll")
 	public String findAll(Model model) {
 		List<Product> list = productService.findAll();
 		model.addAttribute("list", list);
-		return "product";
+		return "Product_List";
 	}
 }
