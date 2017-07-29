@@ -1,8 +1,8 @@
 package com.situ.mall.service.vo;
 
 public class ProductSearchCondition {
-	// 当前页
-	private Integer pageIndex;
+	// 当前页  默认是1
+	private Integer pageIndex = 1;
 	// 当前页一共有多少数据  默认是5
 	private Integer pageSize = 5;
 	private String name;

@@ -20,12 +20,6 @@
 			type="text/css">
 			<link href="${ctx}/static/Widget/icheck/icheck.css" rel="stylesheet"
 				type="text/css" />
-			<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-			<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
 			<title>产品列表</title>
 			
 </head>
@@ -35,8 +29,10 @@
 			<div class="search_style">
 				<form id="searchForm" action="${ctx}/product/findPageBeanByCondition.action" method="post">
 					<ul class="search_content clearfix">
-						<input type="hidden" name="pageIndex" id="pageIndex"/>
-						<li><label class="l_f">产品名称</label><input name="name" type="text"
+						<input type="hidden" name="pageIndex" value="1" id="pageIndex"/>
+						<li>
+							<label class="l_f">产品名称</label>
+							<input name="name" type="text" value="${condition.name}"
 							class="text_add" placeholder="输入品牌名称" style=" width:250px" /></li>
 						<!-- <li><label class="l_f">添加时间</label><input
 							class="inline laydate-icon" id="start" style=" margin-left:10px;">
@@ -52,7 +48,7 @@
 				<span class="l_f"> <a href="picture-add.html" title="添加商品"
 					class="btn btn-warning Order_form"><i class="icon-plus"></i>添加商品</a>
 					<a href="javascript:ovid()" class="btn btn-danger"><i
-						class="icon-trash"></i>批量删除</a> </span> <span class="r_f">共：<b>${list.size()}</b>件商品</span>
+						class="icon-trash"></i>批量删除</a> </span> <span class="r_f">共：<b>${pageBean.totalCount}</b>件商品</span>
 			</div>
 			<div class="table_menu_list" id="testIframe">
 				<table class="table table-striped table-bordered table-hover"

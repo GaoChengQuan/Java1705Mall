@@ -62,7 +62,10 @@ public class ProductServiceImpl implements IProductService{
 		// 2、当前页显示的条数private Integer pageSize;
 		pageBean.setPageSize(pageSize);
 		// 3、总条数private Integer totalCount;
-		int totalCount = productMapper.countByExample(null);
+		ProductExample productExample = new ProductExample();
+		Criteria createCriteria = productExample.createCriteria();
+		createCriteria.andNameLike("%" + condition.getName() + "%");
+		int totalCount = productMapper.countByExample(productExample);
 		pageBean.setTotalCount(totalCount);
 		// 4、总页数private Integer totalPage;
 		int totalPage = (int) Math.ceil((double)totalCount / pageSize);
@@ -75,7 +78,6 @@ public class ProductServiceImpl implements IProductService{
 		pageBean.setList(list);
 		
 		return pageBean;
-	
 	}
 
 }
