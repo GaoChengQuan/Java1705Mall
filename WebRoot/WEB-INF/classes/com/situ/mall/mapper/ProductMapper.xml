@@ -320,4 +320,19 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="findPageBeanList" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from product
+    limit ${pageIndex},${pageSize}
+  </select>
+  
+  <select id="findPageBeanListByCondition" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from product
+    where name like '%${name}%'
+    limit ${pageIndex},${pageSize}
+  </select>
 </mapper>

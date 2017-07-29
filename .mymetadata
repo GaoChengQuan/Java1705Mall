@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="Java1705Mall"
+  name="Java1705Mall_Manager"
   id="myeclipse.1501060433186"
-  context-root="/Java1705Mall"
+  context-root="/Java1705Mall_Manager"
   j2ee-spec="5.0"
-  archive="Java1705Mall.war">
+  archive="Java1705Mall_Manager.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>

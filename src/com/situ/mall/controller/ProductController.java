@@ -10,24 +10,38 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.situ.mall.pojo.Product;
 import com.situ.mall.service.IProductService;
+import com.situ.mall.service.vo.PageBean;
+import com.situ.mall.service.vo.ProductSearchCondition;
 
 @Controller
 @RequestMapping("/product")
 public class ProductController {
-	
+	private static final int DEFAULT_PAGE_SIZE = 5;
+
 	@Autowired
 	IProductService productService;
-	
-	@RequestMapping("/listJson")
+
+	@RequestMapping("/findAllJson")
 	@ResponseBody
-	public List<Product> listJson() {
+	public List<Product> findAllJson() {
 		return productService.findAll();
 	}
-	
-	@RequestMapping("/findAll")
-	public String findAll(Model model) {
-		List<Product> list = productService.findAll();
-		model.addAttribute("list", list);
-		return "Products_List";
+
+	@RequestMapping("/index")
+	private String index(Model model) {
+		PageBean<Product> pageBean = productService.getPageBean(1,
+				DEFAULT_PAGE_SIZE);
+		System.out.println(pageBean);
+		model.addAttribute("pageBean", pageBean);
+		return "products_list";
 	}
+
+	@RequestMapping("/findPageBeanByCondition")
+	private String findPageBeanByCondition(ProductSearchCondition condition, Model model) {
+		PageBean<Product> pageBean = productService.findByCondition(condition);
+		model.addAttribute("condition", condition);
+		model.addAttribute("pageBean", pageBean);
+		return "products_list";
+	}
+
 }
