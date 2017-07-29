@@ -37,11 +37,19 @@ public class ProductController {
 	}
 
 	@RequestMapping("/findPageBeanByCondition")
-	private String findPageBeanByCondition(ProductSearchCondition condition, Model model) {
+	private String findPageBeanByCondition(ProductSearchCondition condition,
+			Model model) {
 		PageBean<Product> pageBean = productService.findByCondition(condition);
 		model.addAttribute("condition", condition);
 		model.addAttribute("pageBean", pageBean);
 		return "products_list";
+	}
+	
+	@RequestMapping("/deleteById")
+	private String deleteById(int id, Model model) {
+		productService.deleteById(id);
+		//删除后重定向
+		return "redirect:/product/index.action";
 	}
 
 }

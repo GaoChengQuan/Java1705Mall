@@ -80,4 +80,9 @@ public class ProductServiceImpl implements IProductService{
 		return pageBean;
 	}
 
+	@Override
+	public void deleteById(int id) {
+		productMapper.deleteByPrimaryKey(id);
+	}
+
 }

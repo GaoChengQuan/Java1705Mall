@@ -23,4 +23,10 @@ public interface IProductService {
 	 * @return
 	 */
 	public PageBean<Product> findByCondition(ProductSearchCondition condition);
+
+	/**
+	 * 根据id删除
+	 * @param id
+	 */
+	public void deleteById(int id);
 }

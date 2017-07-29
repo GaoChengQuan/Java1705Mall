@@ -90,7 +90,7 @@
 									onclick="member_edit('编辑','member-add.html','4','','510')"
 									href="javascript:;" class="btn btn-xs btn-info"><i
 										class="icon-edit bigger-120"></i> </a> <a title="删除"
-									href="javascript:;" onclick="member_del(this,'1')"
+									href="javascript:;" onclick="member_del(this,${product.id})"
 									class="btn btn-xs btn-warning"><i
 										class="icon-trash  bigger-120"></i> </a>
 								</td>
@@ -296,11 +296,12 @@
 	/*产品-删除*/
 	function member_del(obj, id) {
 		layer.confirm('确认要删除吗？', function(index) {
-			$(obj).parents("tr").remove();
-			layer.msg('已删除!', {
+			//$(obj).parents("tr").remove();
+			location.href = "${ctx}/product/deleteById.action?id="+ id; 
+			/* layer.msg('已删除!', {
 				icon : 1,
 				time : 1000
-			});
+			}); */
 		});
 	}
 	//面包屑返回值
