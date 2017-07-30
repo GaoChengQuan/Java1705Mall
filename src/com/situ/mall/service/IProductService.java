@@ -29,4 +29,10 @@ public interface IProductService {
 	 * @param id
 	 */
 	public void deleteById(int id);
+
+	/**
+	 * 添加商品
+	 * @param product
+	 */
+	public void add(Product product);
 }

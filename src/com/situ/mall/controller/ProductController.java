@@ -1,5 +1,6 @@
 package com.situ.mall.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +60,9 @@ public class ProductController {
 	
 	@RequestMapping("/add")
 	private String add(Product product) {
-		
+		product.setCreateTime(new Date());
+		product.setUpdateTime(new Date());
+		productService.add(product);
 		//删除后重定向
 		return "redirect:/product/index.action";
 	}

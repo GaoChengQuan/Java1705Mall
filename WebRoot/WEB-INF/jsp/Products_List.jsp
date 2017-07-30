@@ -45,7 +45,7 @@
 				<form/>
 			</div>
 			<div class="border clearfix">
-				<span class="l_f"> <a href="picture-add.html" title="添加商品"
+				<span class="l_f"> <a href="${ctx}/product/toAdd.action" title="添加商品"
 					class="btn btn-warning Order_form"><i class="icon-plus"></i>添加商品</a>
 					<a href="javascript:ovid()" class="btn btn-danger"><i
 						class="icon-trash"></i>批量删除</a> </span> <span class="r_f">共：<b>${pageBean.totalCount}</b>件商品</span>

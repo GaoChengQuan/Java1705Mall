@@ -85,4 +85,9 @@ public class ProductServiceImpl implements IProductService{
 		productMapper.deleteByPrimaryKey(id);
 	}
 
+	@Override
+	public void add(Product product) {
+		productMapper.insert(product);
+	}
+
 }
