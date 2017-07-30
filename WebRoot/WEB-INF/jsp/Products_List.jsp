@@ -326,5 +326,5 @@
 		//parent.$('.Current_page').html("<a href='javascript:void(0)' name="+herf+" class='iframeurl'>" + cnames + "</a>");
 		parent.layer.close(index);
 
-	});
+	})};
 </script>

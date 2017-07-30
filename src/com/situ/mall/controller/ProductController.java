@@ -51,5 +51,17 @@ public class ProductController {
 		//删除后重定向
 		return "redirect:/product/index.action";
 	}
+	
+	@RequestMapping("/toAdd")
+	private String toAdd() {
+		return "product_add";
+	}
+	
+	@RequestMapping("/add")
+	private String add(Product product) {
+		
+		//删除后重定向
+		return "redirect:/product/index.action";
+	}
 
 }
