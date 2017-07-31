@@ -160,8 +160,6 @@
 <!-- page specific plugin scripts -->
 <script src="${ctx}/static/assets/js/jquery.dataTables.min.js"></script>
 <script src="${ctx}/static/assets/js/jquery.dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="${ctx}/static/js/H-ui.js"></script>
-<script type="text/javascript" src="${ctx}/static/js/H-ui.admin.js"></script>
 <script src="${ctx}/static/assets/layer/layer.js"
 	type="text/javascript"></script>
 <script src="${ctx}/static/assets/laydate/laydate.js"

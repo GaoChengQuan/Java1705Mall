@@ -33,7 +33,7 @@
 <body>
 <div class="clearfix" id="add_picture">
    <div class="type_title">添加商品</div>
-	<form id="formId" action="${ctx}/product/add.action" method="post" enctype="multipart/form-data" class="form form-horizontal" id="form-article-add">
+	<form action="${ctx}/product/add.action" method="post" enctype="multipart/form-data" class="form form-horizontal" id="form-article-add">
 		<div class="clearfix cl">
          <label class="form-label col-2"><span class="c-red">*</span>商品名称：</label>
 		 <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name="name"></div>
@@ -109,8 +109,8 @@
     </div>
 </div>
 </div>
-<script src="${ctx}/static/js/jquery-1.9.1.min.js"></script>   
-<script src="${ctx}/static/js/jquery.form.js"></script>   
+<script src="${ctx}/static/js/jquery-1.9.1.min.js"></script>
+<script src="${ctx}/static/js/jquery.form.js"></script>
 <script src="${ctx}/static/assets/js/bootstrap.min.js"></script>
 <script src="${ctx}/static/assets/js/typeahead-bs2.min.js"></script>
 <script src="${ctx}/static/assets/layer/layer.js" type="text/javascript" ></script>
@@ -124,9 +124,6 @@
 <script type="text/javascript" src="${ctx}/static/Widget/ueditor/1.4.3/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="${ctx}/static/Widget/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script> 
 <script src="${ctx}/static/js/lrtk.js" type="text/javascript" ></script>
-<script type="text/javascript" src="${ctx}/static/js/H-ui.js"></script> 
-<script type="text/javascript" src="${ctx}/static/js/H-ui.admin.js"></script> 
-
 <script type="text/javascript">
 	function uploadPic() {
 		//定义参数
@@ -139,10 +136,9 @@
 				$("#mainImage").val(data.fileName);
 			}
 		};
-		$("#formId").ajaxSubmit(options);
+		$("#form-article-add").ajaxSubmit(options);
 	}
 </script>
-
 <script>
 $(function() { 
 	$("#add_picture").fix({
