@@ -33,7 +33,7 @@
 <body>
 <div class="clearfix" id="add_picture">
    <div class="type_title">添加商品</div>
-	<form action="${ctx}/product/add.action" method="post" class="form form-horizontal" id="form-article-add">
+	<form id="formId" action="${ctx}/product/add.action" method="post" enctype="multipart/form-data" class="form form-horizontal" id="form-article-add">
 		<div class="clearfix cl">
          <label class="form-label col-2"><span class="c-red">*</span>商品名称：</label>
 		 <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name="name"></div>
@@ -67,7 +67,11 @@
 			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="price" >元</div>
 			</div>
 		</div>
-		
+		<div>
+			<img alt="" id="imgId" src="" width=100 height=100>
+			<input type="hidden" name="mainImage" id="mainImage"/>
+			<input type="file" name="picureFile" onchange="uploadPic();"/>
+		</div>
 		<div class="clearfix cl">
 			<label class="form-label col-2">图片上传：</label>
 			<div class="formControls col-10">
@@ -106,6 +110,7 @@
 </div>
 </div>
 <script src="${ctx}/static/js/jquery-1.9.1.min.js"></script>   
+<script src="${ctx}/static/js/jquery.form.js"></script>   
 <script src="${ctx}/static/assets/js/bootstrap.min.js"></script>
 <script src="${ctx}/static/assets/js/typeahead-bs2.min.js"></script>
 <script src="${ctx}/static/assets/layer/layer.js" type="text/javascript" ></script>
@@ -121,6 +126,23 @@
 <script src="${ctx}/static/js/lrtk.js" type="text/javascript" ></script>
 <script type="text/javascript" src="${ctx}/static/js/H-ui.js"></script> 
 <script type="text/javascript" src="${ctx}/static/js/H-ui.admin.js"></script> 
+
+<script type="text/javascript">
+	function uploadPic() {
+		//定义参数
+		var options = {
+			url:"${ctx}/upload/uploadPic.action",
+			dataType:"json",
+			type:"post",
+			success: function(data) {
+				$("#imgId").attr("src","/pic/" + data.fileName);
+				$("#mainImage").val(data.fileName);
+			}
+		};
+		$("#formId").ajaxSubmit(options);
+	}
+</script>
+
 <script>
 $(function() { 
 	$("#add_picture").fix({
