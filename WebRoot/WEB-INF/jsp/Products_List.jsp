@@ -77,7 +77,7 @@
 								<td width="80px">${product.id}</td>
 								<td width="250px"><u style="cursor:pointer"
 									class="text-primary" onclick="">${product.name}</u></td>
-								<td width="100px"><img src="/pic/${product.mainImage}" width=50 height=50/></td>
+								<td width="100px"><img src="${product.fullUrl}" width=50 height=50/></td>
 								<td width="100px">${product.price}</td>
 								<td width="100px">${product.stock}</td>
 								<td class="text-l">${product.status}</td>

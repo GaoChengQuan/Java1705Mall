@@ -3,6 +3,8 @@ package com.situ.mall.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.situ.mall.util.QiniuUploadUtil;
+
 public class Product {
     private Integer id;
 
@@ -27,6 +29,10 @@ public class Product {
     private Date createTime;
 
     private Date updateTime;
+    
+    public String getFullUrl() {
+		return QiniuUploadUtil.SERVER_ADDRES + mainImage;
+	}
 
     public Integer getId() {
         return id;

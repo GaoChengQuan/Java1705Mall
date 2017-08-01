@@ -55,7 +55,7 @@
              <label class="form-label col-2">商品状态：</label>	
 			 <div class="formControls col-2"><span class="select-box">
 				<select class="select" name="status">
-					<option>请选择</option>
+					<option value="1">请选择</option>
 					<option value="1">在售</option>
 					<option value="2">下架</option>
 					<option value="3">删除</option>
