@@ -132,7 +132,7 @@
 			dataType:"json",
 			type:"post",
 			success: function(data) {
-				$("#imgId").attr("src","/pic/" + data.fileName);
+				$("#imgId").attr("src",data.filePath);
 				$("#mainImage").val(data.fileName);
 			}
 		};
